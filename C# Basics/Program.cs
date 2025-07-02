@@ -68,14 +68,21 @@
             #endregion
 
             #region 6. Create a function named MinMaxArray, to return the minimum and maximum values stored in an array, using reference parameters
-            int[] MMarr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
-            int MaxArr, MinArr = 0;
-            MinMaxArray(MMarr, out MaxArr, out MinArr);
-            Console.WriteLine($"Max Value : {MaxArr}");
-            Console.WriteLine($"Min Value : {MinArr}");
+            //int[] MMarr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
+            //int MaxArr, MinArr = 0;
+            //MinMaxArray(MMarr, out MaxArr, out MinArr);
+            //Console.WriteLine($"Max Value : {MaxArr}");
+            //Console.WriteLine($"Min Value : {MinArr}");
             #endregion
 
-
+            #region 7. Create an iterative (non-recursive) function to calculate the factorial of the number specified as parameter
+            Console.Write("Enter a Number: ");
+            int.TryParse(Console.ReadLine(), out int Numbb);
+            Console.Clear();
+            int Result = 0;
+            calFactorial(Numbb, out Result);
+            Console.WriteLine(Result);
+            #endregion
 
 
         }
@@ -161,7 +168,14 @@
             min = Numbers.Min();
         }
 
-
+        public static void calFactorial(int Number, out int result)
+        {
+            result = 1;
+            for (int i = 1; i <= Number; i++)
+            {
+                result *= i;
+            }
+        }
 
     }
 }
