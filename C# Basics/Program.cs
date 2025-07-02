@@ -76,13 +76,30 @@
             #endregion
 
             #region 7. Create an iterative (non-recursive) function to calculate the factorial of the number specified as parameter
-            Console.Write("Enter a Number: ");
-            int.TryParse(Console.ReadLine(), out int Numbb);
-            Console.Clear();
-            int Result = 0;
-            calFactorial(Numbb, out Result);
-            Console.WriteLine(Result);
+            //Console.Write("Enter a Number: ");
+            //int.TryParse(Console.ReadLine(), out int Numbb);
+            //Console.Clear();
+            //int Result = 0;
+            //calFactorial(Numbb, out Result);
+            //Console.WriteLine(Result);
             #endregion
+
+            #region 8. Create a function named "ChangeChar" to modify a letter in a certain position (0 based) of a string, replacing it with a different letter
+            Console.Write("Enter a String: ");
+            string text = Console.ReadLine();
+            Console.Write("Please Enter The Position of Char in Index: ");
+            int.TryParse(Console.ReadLine(), out int PChar);
+            string Rstring;
+            do
+            {
+                Console.Write("Please Enter Char To Change it With: ");
+                Rstring = Console.ReadLine();
+            }while (Rstring.Length > 1);
+            char Rchar = Rstring[0];
+            Console.WriteLine(ChangeChar(text, PChar, Rchar)); ;
+            #endregion
+
+
 
 
         }
@@ -177,5 +194,17 @@
             }
         }
 
+
+
+        public static string ChangeChar(string Text, int PChar, char Rchar)
+        {
+            if (Text == "" || PChar < 0 || PChar >= Text.Length)
+                return Text;
+            string Before = Text.Substring(0, PChar);
+            string After = Text.Substring(PChar + 1);
+            string NewTxt = Before + Rchar + After;
+
+            return NewTxt;
+        }
     }
 }
