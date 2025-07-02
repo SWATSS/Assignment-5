@@ -26,6 +26,32 @@
 
 
             #endregion
+
+            #region 2. Explain the difference between passing (Reference type parameters) by value and by reference then write a suitable c# example
+            // 1. Passing  by Value [if u change values of the Var in the Function it will change in the local Var also but if u change the ref of the var in function it'll not change in the local Var]
+            int[] arr = { 1, 2, 3 };
+            int result = SumArray(arr);
+            Console.WriteLine(result);// 5
+            Console.WriteLine(arr[0]);// 50
+            // 2. Passing  by Ref [if u change values of the Var in the Function it will change in the local Var also and if u change the ref of the var in function it'll change in the local Var also]
+            // and u can change the reference it self
+            int[] arr2 = { 1, 2, 3 };
+            int result2 = SumArray2(ref arr2);
+            Console.WriteLine(result2);// 5
+            Console.WriteLine(arr2[0]);// 50
+            #endregion
+
+
+
+
+
+
+
+
+
+
+
+
         }
         public static void Swap(int x, int y)
         {
@@ -38,6 +64,27 @@
             int Temp = x;
             x = y;
             y = Temp;
+        }
+
+        public static int SumArray(int[] Arr)
+        {
+            int sum = 0;
+            Arr[0] = 50;
+            for (int i = 1; i < Arr.Length; i++)
+            {
+                sum += Arr[i];
+            }
+            return sum;
+        }
+        public static int SumArray2(ref int[] Arr)
+        {
+            int sum = 0;
+            Arr[0] = 50;
+            for (int i = 1; i < Arr.Length; i++)
+            {
+                sum += Arr[i];
+            }
+            return sum;
         }
     }
 }
