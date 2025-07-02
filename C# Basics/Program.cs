@@ -42,18 +42,30 @@
             #endregion
 
             #region 3. Write a c# Function that accept 4 parameters from user and return result of summation and subtracting of two numbers
-            int x = 7;
-            int y = 5;
-            string op1="+", op2="-";
-            int rsum, rsub ;
-            FourPar(x, y, op1, op2, out rsum, out rsub);
-            Console.WriteLine(rsum);
-            Console.WriteLine(rsub);
+            //int x = 7;
+            //int y = 5;
+            //string op1 = "+", op2 = "-";
+            //int rsum, rsub;
+            //FourPar(x, y, op1, op2, out rsum, out rsub);
+            //Console.WriteLine(rsum);
+            //Console.WriteLine(rsub);
             #endregion
 
+            #region 4. Write a program in C# Sharp to create a function to calculate the sum of the individual digits of a given number.
+            //Console.Write("Enter a Number: ");
+            //int.TryParse(Console.ReadLine(), out int Numbb);
+            //Console.Clear();
 
+            //Console.WriteLine(CalcIndivdual(Numbb));
+            #endregion
 
+            #region 5. Create a function named "IsPrime", which receives an integer number and retuns true if it is prime, or false if it is not:
+            Console.Write("Enter a Number: ");
+            int.TryParse(Console.ReadLine(), out int Numbb);
+            Console.Clear();
 
+            Console.WriteLine(IsPrime(Numbb));
+            #endregion
 
 
 
@@ -105,7 +117,36 @@
                 sub = num1 - num2;
         }
 
+        public static int CalcIndivdual(int num1)
+        {
+            int sum = 0;
+
+            while (num1 > 0)
+            {
+                int digit = num1 % 10;
+                sum += digit;
+                num1 /= 10;
+            }
+
+            return sum;
+        }
+
+        public static bool IsPrime(int num1)
+        {
+            bool IsPrim = true;
+            if (num1 <= 2)
+                return IsPrim = false;
+            for (int i = 2; i <= num1 / 2; i++)
+            {
+                if (num1 % i == 0)
+                {
+                    IsPrim = false;
+                    break;
+                }
+            }
+            return IsPrim;
 
 
+        }
     }
 }
