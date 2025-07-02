@@ -60,14 +60,20 @@
             #endregion
 
             #region 5. Create a function named "IsPrime", which receives an integer number and retuns true if it is prime, or false if it is not:
-            Console.Write("Enter a Number: ");
-            int.TryParse(Console.ReadLine(), out int Numbb);
-            Console.Clear();
+            //Console.Write("Enter a Number: ");
+            //int.TryParse(Console.ReadLine(), out int Numbb);
+            //Console.Clear();
 
-            Console.WriteLine(IsPrime(Numbb));
+            //Console.WriteLine(IsPrime(Numbb));
             #endregion
 
-
+            #region 6. Create a function named MinMaxArray, to return the minimum and maximum values stored in an array, using reference parameters
+            int[] MMarr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
+            int MaxArr, MinArr = 0;
+            MinMaxArray(MMarr, out MaxArr, out MinArr);
+            Console.WriteLine($"Max Value : {MaxArr}");
+            Console.WriteLine($"Min Value : {MinArr}");
+            #endregion
 
 
 
@@ -148,5 +154,14 @@
 
 
         }
+
+        public static void MinMaxArray(int[] Numbers, out int max, out int min)
+        {
+            max = Numbers.Max();
+            min = Numbers.Min();
+        }
+
+
+
     }
 }
